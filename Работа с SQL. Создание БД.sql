@@ -3,7 +3,6 @@ CREATE TABLE IF NOT EXISTS Gener (
 	name VARCHAR(40) NOT null
 );
 
-
 CREATE TABLE IF NOT EXISTS Singers (
 	id SERIAL PRIMARY KEY,
 	name VARCHAR(40) NOT NULL
@@ -33,7 +32,6 @@ CREATE TABLE IF NOT EXISTS Geners (
 	Singers_id INTEGER REFERENCES Singers(id),
 	CONSTRAINT pk_Geners PRIMARY KEY (Gener_id, Singers_id)
 );
-
 
 CREATE TABLE IF NOT EXISTS Singers_and_Albom (
 	Singers_id INTEGER REFERENCES Singers(id),
