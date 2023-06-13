@@ -9,44 +9,40 @@ CREATE TABLE IF NOT EXISTS Singers (
 	name VARCHAR(40) NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS Songs (
-	id SERIAL PRIMARY KEY,
-	name VARCHAR(40) NOT null
-	(не понимаю)interval  -- не понимаю как  
-	Albom_id INTEGER REFERENCES Albom(id),
-);
-
 CREATE TABLE IF NOT EXISTS Albom (
 	id SERIAL PRIMARY KEY,
-	name VARCHAR(40) NOT null
-	(не понимаю)date YEAR  -- не понимаю как 
+	name VARCHAR(40) NOT null,
+	year_release_albom date NOT null 
+);
+
+CREATE TABLE IF NOT EXISTS Songs (
+	id SERIAL PRIMARY KEY,
+	name VARCHAR(40) NOT null,
+	duration_song time not null,  
+	Albom_id INTEGER REFERENCES Albom(id)
 );
 
 CREATE TABLE IF NOT EXISTS Collection (
 	id SERIAL PRIMARY KEY,
-	name VARCHAR(40) NOT null
-	(не понимаю)date YEAR  -- не понимаю как 
+	name VARCHAR(40) NOT null,
+	year_release_collection date not null  
 );
 
 CREATE TABLE IF NOT EXISTS Geners (
-	Singers_id INTEGER REFERENCES Singers(id),
 	Gener_id INTEGER REFERENCES Gener(id),
-	CONSTRAINT pk PRIMARY KEY (Singers_id, Gener_id)
+	Singers_id INTEGER REFERENCES Singers(id),
+	CONSTRAINT pk_Geners PRIMARY KEY (Gener_id, Singers_id)
 );
 
 
-CREATE TABLE IF NOT EXISTS Singers&Albom(
+CREATE TABLE IF NOT EXISTS Singers_and_Albom (
 	Singers_id INTEGER REFERENCES Singers(id),
 	Albom_id INTEGER REFERENCES Albom(id),
-	CONSTRAINT pk PRIMARY KEY (Ispolniteli_id, Albom_id)
+	CONSTRAINT pk_Singers_and_Albom PRIMARY KEY (Singers_id, Albom_id)
 );	
 
-CREATE TABLE IF NOT EXISTS Collection-of-Songs(
+CREATE TABLE IF NOT EXISTS Collection_of_Songs(
+	Songs_id INTEGER REFERENCES Songs(id),
 	Collection_id INTEGER REFERENCES Collection(id),
-	Songsid INTEGER REFERENCES Songs(id),
-	CONSTRAINT pk PRIMARY KEY (Ispolniteli_id, Albom_id)
+	CONSTRAINT pk_Collection_of_Songs PRIMARY KEY (Songs_id, Collection_id)
 );
-
-
-
-
