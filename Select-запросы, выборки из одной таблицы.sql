@@ -74,7 +74,7 @@ INSERT INTO songs (name, duration_song, albom_id) values -- не могу соз
 ('Письмо ведьмаку', 337, 8)
 ;
 
-INSERT INTO collection  (name, year_release_albom) values -- SQL Error [42804]: ОШИБКА: столбец "year_release_albom" имеет тип date, а выражение - integer не понимаю как исправить
+INSERT INTO collection  (name, year_release_collection) values -- SQL Error [42804]: ОШИБКА: столбец "year_release_collection" имеет тип date, а выражение - integer не понимаю как исправить
 ('Ария и Кипелов', 2014),
 ('КиШ и Пилот', 2009),
 ('Сектор Газа и Lumen', 1999),
