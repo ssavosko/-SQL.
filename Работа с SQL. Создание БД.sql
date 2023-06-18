@@ -44,7 +44,3 @@ CREATE TABLE IF NOT EXISTS Collection_of_Songs(
 	Collection_id INTEGER REFERENCES Collection(id),
 	CONSTRAINT pk_Collection_of_Songs PRIMARY KEY (Songs_id, Collection_id)
 );
-
-
-
-
