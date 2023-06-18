@@ -45,7 +45,7 @@ INSERT INTO albom (name, year_release_albom) values
 ('Призраки и Тени', '20210101')
 ;
 
-INSERT INTO singers_and_albom  values
+INSERT INTO singers_and_albom values
 (1, 1),
 (2, 2),
 (3, 3),
@@ -71,7 +71,11 @@ INSERT INTO songs (name, duration_song, albom_id) values
 ('Лирика', '00:04:20', 7),
 ('Возле дома твоего', '00:03:05', 7),
 ('Призраки и тени', '00:05:04', 8),
-('Письмо ведьмаку', '00:05:37', 8)
+('Письмо ведьмаку', '00:05:37', 8),
+('my own', '00:04:02' , 1),
+('my god', '00:03:45' , 1),
+('bemy self', '00:03:45' , 1),
+('myself', '00:03:45' , 1)
 ;
 
 INSERT INTO collection  (name, year_release_collection) values
